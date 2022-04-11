@@ -1,6 +1,7 @@
 
 from django.shortcuts import render
 from django.http import HttpResponse
+from django.core.handlers.wsgi import WSGIRequest
 import random
 
 
@@ -31,5 +32,4 @@ def lotto(request):
     list = range(1, 45)
     lotto = random.sample(list, 7)
     # print(lotto)
-
     return render(request, 'lotto.html', {'lotto': lotto})
